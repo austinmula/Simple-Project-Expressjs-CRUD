@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "name": "Austin Akech",
+    "score": 91,
+    "grade": "A"
+  },
+  {
+    "id": "3",
+    "name": "Blake Jason",
+    "score": 83,
+    "grade": "B"
+  },
+  {
+    "id": "2",
+    "name": "Jasmine Green",
+    "score": 83,
+    "grade": "B"
+  },
+  {
+    "id": "5",
+    "name": "Javier Hernandes",
+    "score": 78,
+    "grade": "C"
+  },
+  {
+    "id": "4",
+    "name": "Javier Cancelo",
+    "score": 77,
+    "grade": "C"
+  },
+  {
+    "id": "7",
+    "name": "Chopaw",
+    "score": 77,
+    "grade": "C"
+  },
+  {
+    "id": "9",
+    "name": "Elci",
+    "score": 77,
+    "grade": "C"
+  },
+  {
+    "id": "8",
+    "name": "Frank Gambino",
+    "score": 74,
+    "grade": "C"
+  },
+  {
+    "id": "12",
+    "name": "Harry Pinero",
+    "score": 73,
+    "grade": "C"
+  },
+  {
+    "id": "6",
+    "name": "Grifter",
+    "score": 68,
+    "grade": "D"
+  },
+  {
+    "id": "10",
+    "name": "Kevin Gates",
+    "score": 67,
+    "grade": "D"
+  },
+  {
+    "id": "15",
+    "name": "Wesley Knigt",
+    "score": 56,
+    "grade": "F"
+  },
+  {
+    "id": "11",
+    "name": "Fiona",
+    "score": 81,
+    "grade": "B"
+  }
+]

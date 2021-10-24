@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e4e3e3;
+  box-sizing: border-box;
+}
+
+form {
+  padding: 10px;
+}
