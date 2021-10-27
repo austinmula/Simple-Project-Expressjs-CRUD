@@ -51,7 +51,7 @@ function plotGradeProjections() {
       labels: gradelbl,
       datasets: [
         {
-          label: gradelbl,
+          label: 'Grade Report',
           data: counts,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -72,20 +72,10 @@ function plotGradeProjections() {
       ],
     },
     options: {
-      plugins: {
-        title: {
-          display: true,
-          text: 'Grade Report',
-        },
-      },
       scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
+        y: {
+          beginAtZero: true,
+        },
       },
     },
   });

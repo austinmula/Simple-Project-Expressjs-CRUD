@@ -16,10 +16,47 @@
             <td>{{this.score}}</td>
             <td>{{this.grade}}</td>
             <td><button class="btn btn-danger" onclick="HandleDelete(event, {{this.id}})">Delete</button></td>
-            <td><button class="btn btn-secondary">Edit</button></td>
+            <td><button class="btn btn-secondary" type=" button" data-bs-toggle="modal"
+                    data-bs-target="#edit-form">Edit</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 
-<script src="js/index.js"></script>
+<!-- Modal -->
+<div class=" modal fade" id="edit-form" tabindex="-1" aria-labelledby="editDetailsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editDetailsModal">Edit Details</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Student id" class="mt-2">Student id:</label>
+                        <input type="text" class="form-control" name="id" id="studentid" value="" />
+                    </div>
+
+                    <div class=" form-group">
+                        <label for="Student name" class="mt-2">Student name:</label>
+                        <input type="text" class="form-control" name="name" id="studentname" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Student score" class="mt-2">Student Score:</label>
+                        <input type="text" class="form-control" name="score" id="studentscore" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Edit Member</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src=" js/index.js"></script>

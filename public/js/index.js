@@ -22,7 +22,7 @@ async function addStudent() {
   const student = {
     id: studentId.value,
     name: studentName.value,
-    score: studentScore.value,
+    score: parseInt(studentScore.value),
     grade: addGrade(studentScore.value),
   };
 
