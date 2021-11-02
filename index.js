@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/students', function (req, res) {
+  data.sort((a, b) => (parseInt(a.id) < parseInt(b.id) ? -1 : 1));
   res.render('students', { data });
 });
 

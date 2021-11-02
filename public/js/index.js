@@ -4,6 +4,10 @@ studentId = document.getElementById('studentid');
 studentName = document.getElementById('studentname');
 studentScore = document.getElementById('studentscore');
 
+var edtid;
+var edtname;
+var edtscore;
+
 async function fetchStudents() {
   const url = server + '/api/students';
   const options = {
@@ -15,6 +19,18 @@ async function fetchStudents() {
   const response = await fetch(url, options);
   const students = await response.json();
   populateContent(students);
+}
+
+async function fetchOneStudents(id) {
+  const url = server + '/api/students/' + id;
+  const options = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+    },
+  };
+  const response = await fetch(url, options);
+  const student_data = await response.json();
 }
 
 async function addStudent() {
@@ -105,4 +121,41 @@ function addGrade(score) {
   }
 
   return grade;
+}
+
+function handleEdit(id, name, score) {
+  document.getElementById('stud_id').value = id;
+  document.getElementById('stud_name').value = name;
+  document.getElementById('stud_score').value = score;
+}
+
+async function EditStudent(id) {
+  const url = server + '/api/students/' + id;
+  const student = {
+    name: edtname,
+    score: parseInt(edtscore),
+    grade: addGrade(edtscore),
+  };
+
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(student),
+  };
+  const response = await fetch(url, options);
+
+  const newstudent = await response.json();
+  displaynewStudent(newstudent);
+}
+
+function EditDetails(e) {
+  e.preventDefault();
+
+  edtid = document.getElementById('stud_id').value;
+  edtname = document.getElementById('stud_name').value;
+  edtscore = document.getElementById('stud_score').value;
+
+  EditStudent(edtid);
 }

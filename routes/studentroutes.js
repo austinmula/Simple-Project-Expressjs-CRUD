@@ -8,12 +8,33 @@ let data = JSON.parse(rawData);
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
-
+/*
+   @get request
+   GET all users
+*/
 router.get('/', (request, response) => {
-  data.sort((a, b) => (a.score > b.score ? -1 : 1));
   response.send(data);
 });
 
+/*
+@get request
+GET single users
+*/
+router.get('/:id', (request, response) => {
+  const found = data.some((student) => student.id === request.params.id);
+
+  if (found) {
+    single = data.filter((student) => student.id === request.params.id);
+    response.send(single);
+  } else {
+    response.status(400).json({ msg: 'User not Found' });
+  }
+});
+
+/*
+@post request
+POST user details
+*/
 router.post('/', (req, res) => {
   const newUser = {
     id: req.body.id,
@@ -39,6 +60,10 @@ router.post('/', (req, res) => {
   }
 });
 
+/*
+@delete request
+DELETE user 
+*/
 router.delete('/:id', (request, response) => {
   const found = data.some((student) => student.id === request.params.id);
 
@@ -49,6 +74,29 @@ router.delete('/:id', (request, response) => {
     response.end();
   } else {
     response.status(400).json({ msg: 'Invalid ID' });
+  }
+});
+
+// Update user Details
+
+router.put('/:id', (req, res) => {
+  const found = data.some((student) => student.id === req.params.id);
+  console.log(req.params.id);
+
+  if (found) {
+    const updstudent = req.body;
+    console.log(updstudent);
+    data.forEach((student) => {
+      if (student.id === req.params.id) {
+        student.name = updstudent.name ? updstudent.name : student.name;
+        student.score = updstudent.score ? updstudent.score : student.score;
+
+        res.json({ msg: 'Updated Successfully', student });
+      }
+    });
+    fs.writeFileSync(fileName, JSON.stringify(data, null, 2));
+  } else {
+    res.status(400).json({ msg: 'User not Found' });
   }
 });
 

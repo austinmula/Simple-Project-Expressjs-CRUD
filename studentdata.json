@@ -1,19 +1,31 @@
 [
   {
+    "id": "16",
+    "name": "Jane Doe",
+    "score": 95,
+    "grade": "A"
+  },
+  {
+    "id": "12",
+    "name": "Harry Pinero",
+    "score": 93,
+    "grade": "C"
+  },
+  {
     "id": "1",
     "name": "Austin Akech",
     "score": 91,
     "grade": "A"
   },
   {
-    "id": "3",
-    "name": "Blake Jason",
-    "score": 83,
+    "id": "2",
+    "name": "Jasmine Green",
+    "score": 87,
     "grade": "B"
   },
   {
-    "id": "2",
-    "name": "Jasmine Green",
+    "id": "3",
+    "name": "Blake Jason",
     "score": 83,
     "grade": "B"
   },
@@ -26,7 +38,7 @@
   {
     "id": "5",
     "name": "Javier Hernandes",
-    "score": 78,
+    "score": 94,
     "grade": "C"
   },
   {
@@ -43,7 +55,7 @@
   },
   {
     "id": "9",
-    "name": "Elci",
+    "name": "Alice Neyv",
     "score": 77,
     "grade": "C"
   },
@@ -51,12 +63,6 @@
     "id": "8",
     "name": "Frank Gambino",
     "score": 74,
-    "grade": "C"
-  },
-  {
-    "id": "12",
-    "name": "Harry Pinero",
-    "score": 73,
     "grade": "C"
   },
   {
@@ -73,14 +79,20 @@
   },
   {
     "id": "15",
-    "name": "Wesley Knigt",
+    "name": "Wesley Knight",
     "score": 56,
     "grade": "F"
   },
   {
-    "id": "16",
-    "name": "Jane Doe",
-    "score": 95,
-    "grade": "A"
+    "id": "13",
+    "name": "George Wele",
+    "score": 58,
+    "grade": "F"
+  },
+  {
+    "id": "14",
+    "name": "Kelly Anne",
+    "score": 84,
+    "grade": "B"
   }
 ]

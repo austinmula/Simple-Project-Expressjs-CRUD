@@ -16,8 +16,10 @@
             <td>{{this.score}}</td>
             <td>{{this.grade}}</td>
             <td><button class="btn btn-danger" onclick="HandleDelete(event, {{this.id}})">Delete</button></td>
-            <td><button class="btn btn-secondary" type=" button" data-bs-toggle="modal"
-                    data-bs-target="#edit-form">Edit</button></td>
+            <td><button class="open-AddBookDialog btn btn-secondary" type=" button" data-id='{{this.id}}'
+                    data-bs-toggle="modal" data-bs-target="#edit-form"
+                    onclick="handleEdit('{{this.id}}', '{{this.name}}', '{{this.score}}')">Edit</button>
+            </td>
         </tr>
         {{/each}}
     </tbody>
@@ -35,20 +37,20 @@
             </div>
 
             <div class="modal-body">
-                <form>
+                <form onsubmit="EditDetails(event)">
                     <div class="form-group">
                         <label for="Student id" class="mt-2">Student id:</label>
-                        <input type="text" class="form-control" name="id" id="studentid" value="" />
+                        <input type="text" class="form-control" name="id" id="stud_id" value="" />
                     </div>
 
                     <div class=" form-group">
                         <label for="Student name" class="mt-2">Student name:</label>
-                        <input type="text" class="form-control" name="name" id="studentname" />
+                        <input type="text" class="form-control" name="name" id="stud_name" />
                     </div>
 
                     <div class="form-group">
                         <label for="Student score" class="mt-2">Student Score:</label>
-                        <input type="text" class="form-control" name="score" id="studentscore" />
+                        <input type="text" class="form-control" name="score" id="stud_score" />
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block mt-3">Edit Member</button>
@@ -57,6 +59,5 @@
         </div>
     </div>
 </div>
-
 
 <script src=" js/index.js"></script>
